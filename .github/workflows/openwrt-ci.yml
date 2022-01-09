@@ -52,7 +52,17 @@ jobs:
           cd package
           mkdir openwrt-packages
           cd openwrt-packages
+          
+          git clone https://github.com/jerrykuku/luci-theme-argon.git
+          git clone https://github.com/jerrykuku/luci-app-argon-config.git
+          git clone https://github.com/garypang13/luci-theme-edge.git
+          git clone https://github.com/xiaoqingfengATGH/luci-theme-infinityfreedom.git
+          
           git clone https://github.com/vernesong/OpenClash.git
+          git clone https://github.com/esirplayground/luci-app-poweroff.git
+          git clone https://github.com/AlexZhuo/luci-app-bandwidthd.git
+          git clone https://github.com/destan19/OpenAppFilter.git
+          git clone https://github.com/rufengsuixing/luci-app-adguardhome.git
 
           # sudo mkdir -p -m 777 /mnt/openwrt/bin /mnt/openwrt/build_dir/host /mnt/openwrt/build_dir/hostpkg /mnt/openwrt/dl /mnt/openwrt/feeds /mnt/openwrt/staging_dir
           # ln -s /mnt/openwrt/bin ./bin
@@ -83,7 +93,17 @@ jobs:
           CONFIG_TARGET_IMAGES_GZIP=y
           CONFIG_KERNEL_BUILD_USER="OpenWrt-CI"
           CONFIG_KERNEL_BUILD_DOMAIN="Azure"
+          
+          CONFIG_PACKAGE_luci-theme-argon=y
+          CONFIG_PACKAGE_luci-app-argon-config=y
+          CONFIG_PACKAGE_luci-theme-edge=y
+          CONFIG_PACKAGE_luci-theme-infinityfreedom=y
+          
           CONFIG_PACKAGE_luci-app-openclash=y
+          CONFIG_PACKAGE_luci-app-poweroff=y
+          CONFIG_PACKAGE_luci-app-bandwidthd=y
+          CONFIG_PACKAGE_luci-app-oaf=y
+          CONFIG_PACKAGE_luci-app-adguardhome=y
           EOF
 
           #
